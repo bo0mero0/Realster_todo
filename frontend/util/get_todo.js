@@ -1,16 +1,17 @@
 export const getTodos = (success) => {
+  debugger
     $.ajax({
       method: 'GET',
-      url: '/api/todos',
+      url: '/api/todoitems',
       success
     });
   };
 
 
-export const addTodos = (todo,success) => {
+export const addTodo = (todo,success) => {
     $.ajax({
-      method: 'GET',
-      url: '/api/todos',
+      method: 'POST',
+      url: '/api/todoitems',
       data: todo,
       success
     });

@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Todo from '../todo/todo';
-import receiveTodos from '../../actions/todo_actions';
-import { getTodos, addTodo } from '../../util/get_todo.js';
+import { receiveTodos, createTodo } from '../../actions/todo_actions';
 
 class Main extends React.Component {
   constructor(props) {
@@ -17,13 +16,13 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    const successTodoCallback = todo => this.props.store.dispatch(receiveTodos(todo));
-    getTodos(successTodoCallback);
+    debugger
+    console.log("hello");
+    this.props.fetchTodos();
   }
 
   handleSubmit() {
-    const successTodoCallback = todo => this.props.store.dispatch(receiveTodos(todo));
-    addTodo(this.state, successTodoCallback);
+    this.props.createTodos(this.state);
   }
 
   updateTodoName(e) {

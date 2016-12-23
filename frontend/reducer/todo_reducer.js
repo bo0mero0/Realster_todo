@@ -1,10 +1,8 @@
 import merge from 'lodash/merge';
-
 import { RECEIVE_TODO } from '../actions/todo_actions';
 
 const _defaultState = Object.freeze({
   messages: [],
-
 });
 
 const TodoReducer = (state = _defaultState, action) => {

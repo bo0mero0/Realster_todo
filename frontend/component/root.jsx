@@ -5,8 +5,8 @@ import Main from './main/main';
 
 const Root = ({store}) => {
   return (
-    <Provider >
-      <Main store={store}/>
+    <Provider store={store}>
+      <Main/>
     </Provider>
  );
 };

@@ -1,9 +1,15 @@
-class TodoItemsController < ApplicationController
+class Api::TodoItemsController < ApplicationController
+
+
   def create
-
-    todo = Todo.
-    todo.push(user)
-
+    @todos = [{todo: "buy milk", description: "ran out of milk"},
+              {todo: "call john", description: "reminder"}]
+    render "api/todo/index"
   end
 
+  def index
+    @todos = [{todo: "buy milk", description: "ran out of milk"},
+              {todo: "call john", description: "reminder"}]
+    render "api/todo/index"
+  end
 end
