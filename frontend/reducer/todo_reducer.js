@@ -1,16 +1,19 @@
 import merge from 'lodash/merge';
-import { RECEIVE_TODO } from '../actions/todo_actions';
+import { RECEIVE_TODOS } from '../actions/todo_actions';
 
 const _defaultState = Object.freeze({
-  messages: [],
+  todos: [],
 });
 
 const TodoReducer = (state = _defaultState, action) => {
   switch (action.type) {
-    case RECEIVE_TODO:
+    case RECEIVE_TODOS:
       let receiveTodos = merge({}, state);
       receiveTodos.todo = action.todos;
       return receiveTodos;
+    default:
+    debugger
+      return state;
   }
 };
 

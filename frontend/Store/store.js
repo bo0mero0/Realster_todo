@@ -1,10 +1,12 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import TodoReducer from '../reducer/todo_reducer';
+import TodoMiddleware from '../middleware/todo_middleware';
 
 const configureStore = (preloadedState = {}) => (
   createStore(
-    TodoReducer,
-    preloadedState
+    combineReducers({ Todo: TodoReducer}),
+    preloadedState,
+    applyMiddleware(TodoMiddleware)
   )
 );
 

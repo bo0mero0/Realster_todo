@@ -4,12 +4,12 @@ import { fetchTodos, createTodo } from '../../actions/todo_actions';
 
 
 const mapStateToProps = ( state ) => ({
-  todo: state.todo
+  todos: state.todos
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTodos: () => dispatch(fetchTodos()),
-  createTodo: (todo) => dispatch(createTodo(todo)),
+  createTodo: (todo) => dispatch(createTodo(todo))
 });
 
 export default connect(

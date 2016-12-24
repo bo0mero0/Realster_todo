@@ -1,5 +1,4 @@
 export const getTodos = (success) => {
-  debugger
     $.ajax({
       method: 'GET',
       url: '/api/todoitems',

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Todo from '../todo/todo';
-import { receiveTodos, createTodo } from '../../actions/todo_actions';
 
 class Main extends React.Component {
   constructor(props) {
@@ -16,8 +15,6 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    debugger
-    console.log("hello");
     this.props.fetchTodos();
   }
 
