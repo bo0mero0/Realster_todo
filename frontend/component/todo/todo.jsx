@@ -5,24 +5,37 @@ class Todo extends React.Component {
   constructor(props) {
     super(props);
     this.renderTodos = this.renderTodos.bind(this);
+    this.checkDone = this.checkDone.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
+  }
+
+  checkDone(e) {
+    this.props.checkDone(e.currentTarget.id);
+  }
+
+  deleteTodo(e) {
+    this.props.deleteTodo(e.currentTarget.id);
   }
 
   renderTodos() {
-      return Object.keys(this.props.todos).map((key) => {
-        return (
+    let todoArray = [];
+      // return Object.keys(this.props.todos).map((key) => {
+    for (var key = Object.keys(this.props.todos).length; key > 0; key--) {
+        let cssClass;
+        this.props.todos[key]["done"] === "false" ? cssClass = "todo-name" : cssClass = "todo-name done";
+        todoArray.push(
           <div className="todo-container group" key={key}>
-            <div className="check"><img src="/assets/green_check.png"></img></div>
+            <div className="check" id={key} onClick={this.checkDone}><img src="/assets/green_check.png"></img></div>
             <ul className="todo">
-              <li className="todo-name">{this.props.todos[key]["name"]}</li>
+              <li className={cssClass}><span>{this.props.todos[key]["name"]}</span></li>
               <li className="todo-description">{this.props.todos[key]["description"]}</li>
             </ul>
-            <div className="cross"><img src="/assets/x_mark.png"></img></div>
+            <div className="cross" id={key} onClick={this.deleteTodo}><img src="/assets/x_mark.png"></img></div>
           </div>
         );
-      });
+      }
+    return todoArray;
   }
-
-
 
   render () {
 

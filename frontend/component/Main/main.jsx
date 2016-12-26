@@ -7,22 +7,36 @@ class Main extends React.Component {
     super(props);
     this.state = {
       name: "",
-      description: ""
+      description: "",
+      done: "false"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateTodoName = this.updateTodoName.bind(this);
     this.updateTodoDescription = this.updateTodoDescription.bind(this);
+    this.capitalizeEachWord = this.capitalizeEachWord.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchTodos();
   }
 
+  capitalizeEachWord(string) {
+    return string.replace(/\w\S*/g, (txt) => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     let todos = this.props.todos;
+    let tempState = this.state;
+    tempState["name"] = this.capitalizeEachWord(tempState["name"]);
     todos[Object.keys(todos).length + 1] = this.state;
     this.props.createTodo({todos: todos});
+    this.setState({
+      name: "",
+      description: ""
+    });
   }
 
   updateTodoName(e) {
