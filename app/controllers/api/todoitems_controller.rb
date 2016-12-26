@@ -1,14 +1,14 @@
 class Api::TodoitemsController < ApplicationController
 
   def index
-
-    @todos = [{name: "buy milk", description: "ran out of milk"},
-      {name: "call john", description: "reminder"}]
+    @todos = [{name: "Buy Milk", description: "Supermarket"},
+      {name: "Call John", description: "Office 212-555-5566"},
+      {name: "Meeting with Tom", description: "5th Ave."},
+      {name: "Text Landlord", Descriotion: "Home #"}]
   end
 
   def create
-    @todos = [{name: "buy milk", description: "ran out of milk"},
-              {name: "call john", description: "reminder"}]
+    @todos = params[:todos]
   end
 
 end

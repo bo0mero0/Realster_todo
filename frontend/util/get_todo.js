@@ -1,8 +1,9 @@
-export const getTodos = (success) => {
+export const getTodos = (success, error) => {
     $.ajax({
       method: 'GET',
       url: '/api/todoitems',
-      success
+      success,
+      error
     });
   };
 

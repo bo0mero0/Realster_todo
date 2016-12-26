@@ -1,3 +1,179 @@
 // Place all the styles related to the TodoItems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  margin: 0;
+  background-color: #c96dd8;
+}
+
+li {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.header {
+  height: 236px;
+  width: 100%;
+  background-color: #00bbd3;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 0 4px 0 rgba(0, 0, 0, 0.12);
+}
+
+.circle {
+  font-size: 135px;
+  width: 50px;
+  height: 50px;
+  margin-left: 30px;
+  line-height: 125px;
+  float:left;
+  opacity: .3;
+}
+
+.menu-icon {
+  font-size: 40px;
+  opacity: .3;
+  width: 50px;
+  margin: 30px 30px 0 0 ;
+  float: right;
+}
+
+.todos-container {
+  width: 442.6px;
+  margin: 0 auto;
+}
+
+.task-form {
+  height: 70px;
+  margin-top: 41px;
+}
+
+.text-input-container {
+  width: 372px;
+  float: left;
+}
+
+.name-input {
+  width: 370px;
+  height: 20px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding-bottom: 0px;
+}
+
+.input-line {
+  height: 0px;
+  width: 360px;
+  border-bottom: solid 1px #dfdfdf;
+}
+
+.description-input {
+  border: none;
+  height: 20px;
+  margin-bottom: 14px;
+  width: 370px;
+  font-size: 12px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+::-webkit-input-placeholder {
+   color: rgba(255, 255, 255, 0.3);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: rgba(255, 255, 255, 0.3);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(255, 255, 255, 0.3);
+}
+
+:-ms-input-placeholder {
+   color: rgba(255, 255, 255, 0.3);
+}
+
+.submit {
+  border: none;
+  margin-top: 5px;
+  font-size: 35px;
+  font-weight: 100;
+  border-radius: 0px;
+  background-color: transparent;
+  color: #dfdfdf;
+  border-left: solid 1px #dfdfdf;
+  padding-left: 15px;
+}
+
+.todo-container {
+  display: block;
+  background-color: #fafafa;
+  margin-bottom: 10px;
+  height: 70px;
+  width: 442.6px;
+}
+
+.check {
+  display: block;
+  width: 69px;
+  height: 69px;
+  float: left;
+  border-right: solid 1px #dfdfdf;
+}
+
+.check img {
+  width: 19px;
+  height: 19px;
+  margin: 25px;
+}
+
+.todo {
+  box-sizing: border-box;
+  width: 300px;
+  height: 70px;
+  padding: 11px 33px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.87);
+  float: left;
+  margin: 0;
+}
+
+.todo-description {
+  font-size: 14px;
+  line-height: 1.43;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.cross {
+  width: 70px;
+  height: 70px;
+  float: right;
+  border-left: solid 1px #dfdfdf;
+}
+
+.cross img {
+  width: 19px;
+  height: 19px;
+  margin: 25px;
+}

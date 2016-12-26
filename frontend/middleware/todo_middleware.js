@@ -12,12 +12,12 @@ import {
 } from '../util/get_todo';
 
 export default ({getState, dispatch}) => next => action => {
-  const successCreateTodoCallback = todo => dispatch(fetchTodos(todo));
+  // const successCreateTodoCallback = todo => dispatch(fetchTodos(todo));
   const successReceiveTodoCallback = todo => dispatch(receiveTodos(todo));
 
   switch (action.type) {
     case CREATE_TODO:
-      addTodo(action.todo, successCreateTodoCallback);
+      addTodo(action.todo, successReceiveTodoCallback);
       return next(action);
     case FETCH_TODOS:
       getTodos(successReceiveTodoCallback);

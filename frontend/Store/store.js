@@ -4,7 +4,7 @@ import TodoMiddleware from '../middleware/todo_middleware';
 
 const configureStore = (preloadedState = {}) => (
   createStore(
-    combineReducers({ Todo: TodoReducer}),
+    combineReducers({ todo: TodoReducer}),
     preloadedState,
     applyMiddleware(TodoMiddleware)
   )

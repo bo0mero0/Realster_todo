@@ -4,7 +4,7 @@ import { fetchTodos, createTodo } from '../../actions/todo_actions';
 
 
 const mapStateToProps = ( state ) => ({
-  todos: state.todos
+  todos: state.todo.todos
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
