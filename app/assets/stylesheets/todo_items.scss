@@ -155,6 +155,15 @@ input:focus {
   height: 69px;
   float: left;
   border-right: solid 1px #dfdfdf;
+  cursor: pointer;
+}
+
+.check:hover {
+  opacity: .7;
+}
+
+.check:active {
+  opacity: .3;
 }
 
 .check img {
@@ -200,6 +209,15 @@ input:focus {
   height: 70px;
   float: right;
   border-left: solid 1px #dfdfdf;
+  cursor: pointer;
+}
+
+.cross:hover {
+  opacity: .7;
+}
+
+.cross:active {
+  opacity: .3;
 }
 
 .cross img {
