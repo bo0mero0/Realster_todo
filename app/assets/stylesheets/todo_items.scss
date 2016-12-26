@@ -3,11 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
   margin: 0;
-  background-color: #c96dd8;
+  background-color: #c0a5dd;
 }
 
 li {
   list-style: none;
+}
+
+input:focus {
+  outline: none;
 }
 
 .group:after {
@@ -44,11 +48,13 @@ li {
 .todos-container {
   width: 442.6px;
   margin: 0 auto;
+  min-height: calc(100vh - 437px);
 }
 
 .task-form {
   height: 70px;
   margin-top: 41px;
+  margin-bottom: 20px;
 }
 
 .text-input-container {
@@ -59,7 +65,7 @@ li {
 .name-input {
   width: 370px;
   height: 20px;
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 12px;
   font-weight: 300;
   font-stretch: normal;
@@ -76,12 +82,12 @@ li {
   height: 0px;
   width: 360px;
   border-bottom: solid 1px #dfdfdf;
+  opacity: .7;
 }
 
 .description-input {
   border: none;
   height: 20px;
-  margin-bottom: 14px;
   width: 370px;
   font-size: 12px;
   font-weight: 300;
@@ -111,14 +117,21 @@ li {
 
 .submit {
   border: none;
-  margin-top: 5px;
+  height: 70px;
+  margin-top: 3px;
   font-size: 35px;
   font-weight: 100;
   border-radius: 0px;
   background-color: transparent;
   color: #dfdfdf;
   border-left: solid 1px #dfdfdf;
-  padding-left: 15px;
+  padding-left: 25px;
+  cursor: pointer;
+  opacity: .7;
+}
+
+.submit:hover {
+  opacity: .7;
 }
 
 .todo-container {
@@ -193,4 +206,21 @@ li {
   width: 19px;
   height: 19px;
   margin: 25px;
+}
+
+.footer {
+  height: 140px;
+  width: 100%;
+  background: linear-gradient(135deg, #9f8cbd, #c0a5dd);
+}
+
+.footer-logo {
+  width: 95px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 23px;
+}
+
+.footer-logo img {
+  margin: 23px;
 }

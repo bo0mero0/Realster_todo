@@ -31,7 +31,9 @@ class Main extends React.Component {
     let todos = this.props.todos;
     let tempState = this.state;
     tempState["name"] = this.capitalizeEachWord(tempState["name"]);
-    todos[Object.keys(todos).length + 1] = this.state;
+    let todosArray = Object.keys(todos);
+    let lastTodo = todosArray[todosArray.length-1];
+    todos[parseInt(lastTodo) + 1] = this.state;
     this.props.createTodo({todos: todos});
     this.setState({
       name: "",
@@ -77,6 +79,9 @@ class Main extends React.Component {
           <div className="TodoList">
             <Todo/>
           </div>
+        </div>
+        <div className="footer">
+          <div className="footer-logo"><img src="/assets/realster_logo.png"></img></div>
         </div>
       </div>
      );

@@ -19,11 +19,13 @@ class Todo extends React.Component {
 
   renderTodos() {
     let todoArray = [];
-      // return Object.keys(this.props.todos).map((key) => {
-    for (var key = Object.keys(this.props.todos).length; key > 0; key--) {
+    // Object.keys(this.props.todos).forEach((key) => {
+    // const length = Object.keys(this.props.todos).length;
+    // for (var key = length; key > 0; key--) {
+    for ( var key in this.props.todos) {
         let cssClass;
         this.props.todos[key]["done"] === "false" ? cssClass = "todo-name" : cssClass = "todo-name done";
-        todoArray.push(
+        todoArray.unshift(
           <div className="todo-container group" key={key}>
             <div className="check" id={key} onClick={this.checkDone}><img src="/assets/green_check.png"></img></div>
             <ul className="todo">
@@ -33,7 +35,7 @@ class Todo extends React.Component {
             <div className="cross" id={key} onClick={this.deleteTodo}><img src="/assets/x_mark.png"></img></div>
           </div>
         );
-      }
+    }
     return todoArray;
   }
 
